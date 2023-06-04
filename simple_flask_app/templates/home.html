@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Flask App</title>
+    <style>
+        /* Ensure the page takes up the full height of the screen and center everything */
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-family: Arial, sans-serif;
+        }
+        /* Style the header, main content, and footer */
+        header, main, footer {
+            text-align: center;
+            padding: 20px;
+        }
+        header, footer {
+          background-color: #333;
+          color: #fff;
+        }
+        /* Style the image and its description */
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        img {
+            width: auto; /* maintain aspect ratio */
+            height: 50vh; /* 50% of viewport height */
+            max-width: 100%; /* ensure it doesn't overflow the .image-container */
+            object-fit: contain; /* ensure the image scales correctly */
+        }
+        .image-description {
+            margin-top: 10px;
+            text-align: justify; /* ensure the description is centered */
+            max-width: 100vh; /* ensure the description doesn't exceed the width of the image */
+        }
+        h1,h2,h3,h4,h5,h6{
+          margin: 0;
+          padding:0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+      <h1>Welcome to Simple Flask App!</h1>
+      <h4>This is a test application built with Flask</h4>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <!-- This paragraph provides a brief description of the page -->
+        <p><b>The image below is fetched from NASA's Astronomy Picture of the Day API.</b> <br>This image is from {{ fake_date }}</p>
+
+        <!-- This image is fetched from NASA's APOD API -->
+        <div class="image-container">
+            <img src="{{ image_url }}" alt="NASA's Astronomy Picture of the Day">
+            <div class="image-description">{{ image_description }}</div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2023 Simple Flask App</p>
+    </footer>
+</body>
+</html>
